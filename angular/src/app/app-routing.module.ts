@@ -17,11 +17,11 @@ const routes: Routes = [
     title: 'Home',
   },
   {
-    path: 'carBrands',
+    path: 'carBrands/:brand',
     component: CarBrandsComponent,
   },
   {
-    path: 'carBrands/:id',
+    path: 'carDetail/:model',
     component: DetailsComponent,
   },
   {

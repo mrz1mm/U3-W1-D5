@@ -1,8 +1,24 @@
 <div class="card">
+  <img
+    src="{{ carCard?.modelImage }}"
+    class="card-img-top"
+    alt="img dell'auto"
+  />
   <div class="card-body">
-    <h5 class="card-title">{{ postCard?.title }}</h5>
-    <p class="card-text">
-      {{ postCard?.body }}
+    <h5 class="card-title">Modello: {{ carCard?.model }}</h5>
+    <p class="card-text">Anno: {{ carCard?.year }}</p>
+    <p class="card-text">Prezzo {{ carCard?.price }}€</p>
+    <p
+      class="card-text"
+      [ngClass]="{
+        'bg-success': carCard?.available,
+        'bg-danger': !carCard?.available
+      }"
+    >
+      Pronta consegna: {{ carCard?.available }}
     </p>
+    <a routerLink="carDetail/:{{ carCard?.model }}" class="btn btn-primary"
+      >Info</a
+    >
   </div>
 </div>

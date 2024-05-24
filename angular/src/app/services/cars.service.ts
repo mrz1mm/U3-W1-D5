@@ -16,7 +16,7 @@ export class CarsService {
   async getFromJson(): Promise<void> {
     let response = await fetch(this.apiUrl);
     let data = <iCars[]>await response.json();
-    this.carsArray = data;
+    if (data) this.carsArray = data;
   }
 
   // Return the cars array
@@ -25,12 +25,14 @@ export class CarsService {
   }
 
   // Return the car brands
-  getBrand(): string[] {
-    return this.carsArray.map((car) => car.brand);
+  getBrand(brand: string): iCars[] {
+    return this.carsArray.filter((car) => car.brand == brand);
   }
 
   // Return the car models
-  getModel(model: string) {
-    return this.carsArray.find((car) => car.model == model);
+  getModel(model: string): iCars | undefined {
+    const modelFound = this.carsArray.find((car) => car.model == model);
+    if (modelFound) return modelFound;
+    return undefined;
   }
 }

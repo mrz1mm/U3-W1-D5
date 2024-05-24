@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { iPostDati } from '../../models/posts';
+import { iCars } from '../../models/iCars';
 
 @Component({
   selector: 'app-card',
@@ -7,5 +7,6 @@ import { iPostDati } from '../../models/posts';
   styleUrl: './card.component.scss',
 })
 export class CardComponent {
-  @Input() postCard: iPostDati | null = null;
+  // Get the carCard from the parent component
+  @Input() carCard: iCars | null = null;
 }
