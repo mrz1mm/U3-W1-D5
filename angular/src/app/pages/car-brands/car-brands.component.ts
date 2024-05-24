@@ -24,27 +24,24 @@ export class CarBrandsComponent {
   ) {}
 
   async ngOnInit() {
+    // Get the cars array from the service
     await this.carsService.getFromJson();
 
+    // Get the route parameters
     this.route.params.subscribe((params: any) => {
-      console.log(params);
-      console.log(params.brand);
-      console.log(params.brand.slice(1));
       this.brand = params.brand.slice(1);
 
+      // Get the cars from the service
       this.carsArray = this.carsService.getBrand(this.brand);
-      console.log(this.carsArray);
       this.disclaimer = this.disclaimerBrand(this.brand);
     });
   }
 
+  // Get the disclaimer for the brand
   disclaimerBrand(brand: string): string {
     if (brand === 'Fiat') return 'The most lovely.';
-
     if (brand === 'Ford') return 'Bring on tomorrow.';
-
     if (brand === 'Audi') return 'Future is an attitude.';
-
     return 'No disclaimer for this brand.';
   }
 }

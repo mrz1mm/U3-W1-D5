@@ -24,16 +24,15 @@ export class DetailsComponent {
   ) {}
 
   async ngOnInit() {
+    // Get the cars array from the service
     await this.carsService.getFromJson();
 
+    // Get the route parameters
     this.route.params.subscribe((params: any) => {
-      console.log(params);
-      console.log(params.model);
-      console.log(params.model.slice(1));
       this.model = params.model.slice(1);
 
+      // Get the car from the service
       this.car = this.carsService.getModel(this.model);
-      console.log('Questo è this.car:', this.car);
       if (this.car) console.log('modelImage:', this.car.modelImage);
     });
   }

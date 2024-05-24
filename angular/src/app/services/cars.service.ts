@@ -35,4 +35,10 @@ export class CarsService {
     if (modelFound) return modelFound;
     return undefined;
   }
+
+  // Get two random cars from the cars array
+  getRandomCars(): iCars[] {
+    const shuffled = [...this.carsArray].sort(() => 0.5 - Math.random());
+    return shuffled.slice(0, 2);
+  }
 }

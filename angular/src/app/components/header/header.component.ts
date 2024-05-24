@@ -6,5 +6,6 @@ import { Component } from '@angular/core';
   styleUrl: './header.component.scss',
 })
 export class HeaderComponent {
+  // Create a boolean to show or hide the menu
   show: boolean = false;
 }

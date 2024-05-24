@@ -17,6 +17,6 @@ export class HomeComponent {
   // Get the cars array from the service
   async ngOnInit() {
     await this.carsService.getFromJson();
-    this.carsArray = this.carsService.getCarsArray();
+    this.carsArray = this.carsService.getRandomCars();
   }
 }
