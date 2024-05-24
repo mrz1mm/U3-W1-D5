@@ -32,12 +32,14 @@
     </div>
   </div>
   <!-- Featured cars -->
-  <div
-    class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xxl-6 m-5"
-  >
-    <div class="col-12 text-center">
+  <div class="row mt-5">
+    <div class="col text-center">
       <h2>Auto in evidenza</h2>
     </div>
+  </div>
+  <div
+    class="row row-cols-1 row-cols-sm-2 row-cols-lg-4 justify-content-center my-5"
+  >
     <div class="col" *ngFor="let x of carsArray">
       <app-card [carCard]="x"></app-card>
     </div>
