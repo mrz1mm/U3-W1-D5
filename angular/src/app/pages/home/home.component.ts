@@ -1,20 +1,25 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CarsService } from '../../services/cars.service';
 import { iCars } from '../../models/iCars';
+import { AudioService } from '../../services/audio.service';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrl: './home.component.scss',
+  styleUrls: ['./home.component.scss'],
 })
-export class HomeComponent {
-  // Create an empty array to store the cars
+export class HomeComponent implements OnInit {
   carsArray: iCars[] = [];
 
-  // Inject the CarsService
-  constructor(private carsService: CarsService) {}
+  constructor(
+    private carsService: CarsService,
+    private audioService: AudioService
+  ) {
+    if (!this.audioService.isPlaying()) {
+      this.audioService.play();
+    }
+  }
 
-  // Get the cars array from the service
   async ngOnInit() {
     await this.carsService.getFromJson();
     this.carsArray = this.carsService.getRandomCars();

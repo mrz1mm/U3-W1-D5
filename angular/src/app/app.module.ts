@@ -1,8 +1,9 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+
+import { AudioService } from './services/audio.service';
 
 import { HomeComponent } from './pages/home/home.component';
 import { CarBrandsComponent } from './pages/car-brands/car-brands.component';
@@ -25,7 +26,7 @@ import { CardComponent } from './components/card/card.component';
     CardComponent,
   ],
   imports: [BrowserModule, AppRoutingModule],
-  providers: [],
+  providers: [AudioService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
