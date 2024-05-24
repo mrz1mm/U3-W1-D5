@@ -2,11 +2,16 @@
   class="navbar navbar-expand-lg bg-dark border-bottom border-body"
   data-bs-theme="dark"
 >
-  <div class="container-fluid">
-    <a class="navbar-brand" href="#"
-      ><img src="../../../assets/img/logo.png" alt="page's logo" routerLink="/"
-    /></a>
+  <div class="container-fluid bg-dark">
+    <a class="navbar-brand" href="#">
+      <img
+        src="../../../assets/img/logo.png"
+        alt="page's logo"
+        routerLink="/"
+      />
+    </a>
     <button
+      (click)="show = !show"
       class="navbar-toggler"
       type="button"
       data-bs-toggle="collapse"
@@ -17,7 +22,11 @@
     >
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <div
+      class="collapse navbar-collapse"
+      id="navbarSupportedContent"
+      [ngClass]="{ show: show }"
+    >
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
           <a
@@ -56,7 +65,7 @@
           >
         </li>
       </ul>
-      <form class="d-flex" role="search">
+      <form class="d-flex" role="search" [ngClass]="{ 'mb-3': show }">
         <input
           class="form-control me-2"
           type="search"
