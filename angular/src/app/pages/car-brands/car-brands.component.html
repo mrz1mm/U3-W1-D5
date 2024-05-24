@@ -1,6 +1,6 @@
 <div class="container">
   <!-- Brands -->
-  <div class="row row-cols-1 m-5">
+  <div class="row row-cols-1 my-5">
     <div class="col text-center">
       <a routerLink="/carBrands/:{{ brand }}"
         ><img
@@ -14,7 +14,9 @@
     </div>
   </div>
   <!-- Featured cars -->
-  <div class="row row-cols-2 m-5">
+  <div
+    class="row row-cols-1 row-cols-sm-2 row-cols-lg-4 justify-content-center my-5"
+  >
     <div class="col" *ngFor="let car of carsArray">
       <app-card [carCard]="car"></app-card>
     </div>
