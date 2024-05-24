@@ -8,6 +8,7 @@ export class CarsService {
   apiUrl: string = '../../assets/json/db.json';
   carsArray: iCars[] = [];
 
+  // Get the data from the JSON file
   constructor() {
     this.getFromJson();
   }
@@ -18,14 +19,17 @@ export class CarsService {
     this.carsArray = data;
   }
 
-  getAll(): iCars[] {
+  // Return the cars array
+  getCarsArray(): iCars[] {
     return this.carsArray;
   }
 
+  // Return the car brands
   getBrand(): string[] {
     return this.carsArray.map((car) => car.brand);
   }
 
+  // Return the car models
   getModel(model: string) {
     return this.carsArray.find((car) => car.model == model);
   }

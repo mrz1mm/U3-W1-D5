@@ -13,6 +13,6 @@ export class CarBrandsComponent {
   constructor(private carsService: CarsService) {}
 
   ngOnInit() {
-    this.carsArray = this.carsService.getAll();
+    this.carsArray = this.carsService.getCarsArray();
   }
 }
