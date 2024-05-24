@@ -1,7 +1,7 @@
 <div class="container">
   <!-- Brands -->
-  <div class="row row-cols-1 my-5">
-    <div class="col text-center">
+  <div class="row row-cols-1">
+    <div class="col text-center" [ngClass]="{ 'mt-5 mb-4': brand === 'Fiat' }">
       <a routerLink="/carBrands/:{{ brand }}"
         ><img
           src="../../../assets/img/{{ brand }}.png"
@@ -15,7 +15,7 @@
   </div>
   <!-- Featured cars -->
   <div
-    class="row row-cols-1 row-cols-sm-2 row-cols-lg-4 justify-content-center my-5"
+    class="row row-cols-1 row-cols-sm-2 row-cols-lg-4 justify-content-center py-5"
   >
     <div class="col" *ngFor="let car of carsArray">
       <app-card [carCard]="car"></app-card>
