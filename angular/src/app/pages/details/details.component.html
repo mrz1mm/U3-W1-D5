@@ -1,1 +1,15 @@
-<p>details works!</p>
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <div class="card">
+        <img src="{{ car?.modelImage }}" class="card-img-top" alt="car's img" />
+        <div class="card-body">
+          <h5 class="card-title">{{ car?.brand }} {{ car?.model }}</h5>
+          <p class="card-text">Anno: {{ car?.year }}</p>
+          <p class="card-text">Prezzo: {{ car?.price }}</p>
+          <p class="card-text">Pronta consegna: {{ car?.available }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
