@@ -1,0 +1,17 @@
+<h1 class="text-center">Post non attivi</h1>
+<div class="card my-2" *ngIf="post">
+    <div class="card-header">
+        {{ post.tags.join(", ") }}
+    </div>
+    <div class="card-body">
+        <h5 class="card-title">{{ post.title }}</h5>
+        <p class="card-text">{{ post.body }}</p>
+        <a [routerLink]="['/post', post.id]" class="btn btn-primary"
+            >Dettagli</a
+        >
+    </div>
+</div>
+
+<div class="post-content">
+    <ng-container #postFormContainer></ng-container>
+</div>
